@@ -46,8 +46,7 @@ class InvoiceController
             return $this->error(['errors' => $validator->errors()], 'One or more errors were encountered.');
         }
 
-        $data = $validator->safe();
-
+        $data = $validator->safe()->toArray();
         $invoiceId = $data['id'];
 
         unset($data['id']);

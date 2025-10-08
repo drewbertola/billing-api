@@ -14,6 +14,7 @@ class PaymentRequest
     public static function rules(): array
     {
         return [
+            'id' => 'required|integer',
             'customerId' => 'required|integer',
             'amount' => 'numeric',
             'date' => 'required|date',

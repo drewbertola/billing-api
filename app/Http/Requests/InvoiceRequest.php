@@ -14,6 +14,7 @@ class InvoiceRequest
     public static function rules(): array
     {
         return [
+            'id' => 'required|integer',
             'customerId' => 'required|integer',
             'date' => 'required|date',
             'emailed' => 'in:Y,N',

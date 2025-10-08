@@ -48,7 +48,7 @@ class LineItemController
             return $this->error(['errors' => $validator->errors()], 'One or more errors were encountered.');
         }
 
-        $data = $validator->safe();
+        $data = $validator->safe()->toArray();
         $lineItemId = $data['id'];
 
         unset($data['id']);

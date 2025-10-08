@@ -11,7 +11,6 @@ use Illuminate\Database\Query\JoinClause;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
 
 class CustomerController
 {
@@ -50,8 +49,7 @@ class CustomerController
             return $this->error(['errors' => $validator->errors()], 'One or more errors were encountered.');
         }
 
-        $data = $validator->safe();
-
+        $data = $validator->safe()->toArray();
         $customerId = $data['id'];
 
         unset($data['id']);

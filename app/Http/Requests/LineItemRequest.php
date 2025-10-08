@@ -14,6 +14,7 @@ class LineItemRequest
     public static function rules(): array
     {
         return [
+            'id' => 'required|integer',
             'invoiceId' => 'required|integer',
             'price' => 'numeric',
             'units' => 'max:16',

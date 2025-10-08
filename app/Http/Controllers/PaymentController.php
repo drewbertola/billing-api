@@ -8,7 +8,6 @@ use App\Models\Payment;
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
 
 class PaymentController
 {
@@ -44,8 +43,7 @@ class PaymentController
             return $this->error(['errors' => $validator->errors()], 'One or more errors were encountered.');
         }
 
-        $data = $validator->safe();
-
+        $data = $validator->safe()->toArray();
         $paymentId = $data['id'];
 
         unset($data['id']);

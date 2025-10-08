@@ -14,6 +14,7 @@ class CustomerRequest
     public static function rules(): array
     {
         return [
+            'id' => 'required|integer',
             'name' => 'required|max:64',
             'bAddress1' => 'max:64',
             'bAddress2' => 'max:64',
@@ -40,7 +41,7 @@ class CustomerRequest
     public static function messages(): array
     {
         return [
-            'name' => 'Customer Name and limited to characters.',
+            'name' => 'Customer Name and limited to 64 characters.',
             'bAddress1' => 'Limited to 64 characters.',
             'bAddress2' => '64 characters.',
             'bCity' => 'Limited to 32 characters.',
