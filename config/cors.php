@@ -20,7 +20,8 @@ return [
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
-        'https://pwd.drewb.com',
+        'https://billing.drewb.com',
+        'https://billing-ng.drewb.com',
         'http://localhost:4200',
     ],
 
